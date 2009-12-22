@@ -302,5 +302,16 @@ module Legislation
       end
     end
 
+    def self.find_by_year_and_number year, number
+      number_part = number ? "&number=#{number}" : ''
+      search_url = "http://www.legislation.gov.uk/id?year=#{year}#{number_part}"
+      begin
+        xml = Legislation::UK.open_uri(search_url)
+        to_object(xml)
+      rescue Exception => e
+        puts "#{e.class.name} error retrieving: #{search_url}" if $debug
+        nil
+      end
+    end
   end
 end

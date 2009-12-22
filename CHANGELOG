@@ -1,3 +1,4 @@
+v0.0.5a new method for finding an act using the year and chapter
 v0.0.5 create sections for acts that don't contain parts
 v0.0.4 now returns statutelaw uri for a part and for a section
 v0.0.3 now returns opsi uri and legislation uri for a section
